@@ -128,6 +128,8 @@
 #include "../usermods/Si7021_MQTT_HA/usermod_si7021_mqtt_ha.h"
 #endif
 
+#include "../usermods/usermod_v2_hex_clock/usermod_v2_hex_clock.h"
+
 void registerUsermods()
 {
 /*
@@ -135,7 +137,7 @@ void registerUsermods()
    * || || ||
    * \/ \/ \/
    */
-  //usermods.add(new MyExampleUsermod());
+  usermods.add(new HexClock());
 
   #ifdef USERMOD_BATTERY_STATUS_BASIC
   usermods.add(new UsermodBatteryBasic());

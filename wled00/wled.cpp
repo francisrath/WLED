@@ -237,6 +237,7 @@ void WLED::loop()
   }
   if (loadLedmap >= 0) {
     strip.deserializeMap(loadLedmap);
+    currentLedmap = loadLedmap;
     loadLedmap = -1;
   }
 

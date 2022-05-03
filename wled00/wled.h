@@ -612,6 +612,8 @@ WLED_GLOBAL WS2812FX strip _INIT(WS2812FX());
 WLED_GLOBAL BusConfig* busConfigs[WLED_MAX_BUSSES] _INIT({nullptr}); //temporary, to remember values from network callback until after
 WLED_GLOBAL bool doInitBusses _INIT(false);
 WLED_GLOBAL int8_t loadLedmap _INIT(-1);
+// Added with HEX CLOCK mod
+WLED_GLOBAL int8_t currentLedmap _INIT(-1);
 
 // Usermod manager
 WLED_GLOBAL UsermodManager usermods _INIT(UsermodManager());

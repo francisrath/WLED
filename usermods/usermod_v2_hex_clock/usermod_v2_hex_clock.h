@@ -379,7 +379,7 @@ class HexClock : public Usermod {
           if(active)
           {
             int ledId;
-            if(ledmapEnabled && currentPreset==2)
+            if(ledmapEnabled && currentLedmap == 1)
             {
               ledId = reverseVerticalMap[segment[orientation][p][i]];
             }

@@ -374,35 +374,45 @@ class HexClock : public Usermod {
             break;                                  
         }
 
+        // iterate through every pixel of the digit mask
         for(int i=0; i<pixelsNo; i++){
+          //check if this pixel is involved in displaying the time (active)
           bool active = digitMask[orientation%2][digit][i];
           if(active)
           {
             int ledId;
+            //ledmap 1 => vertical pattern (as if strips were spreaded vertically)
             if(ledmapEnabled && currentLedmap == 1)
             {
               ledId = reverseVerticalMap[segment[orientation][p][i]];
             }
+            //ledmap 0 => round pattern (as if strips were spreaded in circles)
             else if(ledmapEnabled)
             {
               ledId = reverseRoundMap[segment[orientation][p][i]];
             }
+            //no ledmap
             else
             {
               ledId = segment[orientation][p][i];
-            } 
+            }
+
+            //normal => white digits
             if(!reverseDigits)
             {
               strip.setPixelColor(ledId, RGBW32(255*digitWhite,255*digitWhite,255*digitWhite,0));
             }
+            // black digits instead of white
             else 
             {
+              //mark this digit as 'should be dark' to later set color
               reverseMask[ledId]=true;
             }
           }
         }
       }
       
+      //apply dark digits instead of white
       if(reverseDigits)
       {
         for(int i=0; i<LEDS_NO; i++)

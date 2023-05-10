@@ -384,17 +384,17 @@ class HexClock : public Usermod {
             //ledmap 1 => vertical pattern (as if strips were spreaded vertically)
             if(ledmapEnabled && currentLedmap == 1)
             {
-              ledId = reverseVerticalMap[mysegment[orientation][p][i]];
+              ledId = reverseVerticalMap[digitSegment[orientation][p][i]];
             }
             //ledmap 0 => round pattern (as if strips were spreaded in circles)
             else if(ledmapEnabled)
             {
-              ledId = reverseRoundMap[mysegment[orientation][p][i]];
+              ledId = reverseRoundMap[digitSegment[orientation][p][i]];
             }
             //no ledmap
             else
             {
-              ledId = mysegment[orientation][p][i];
+              ledId = digitSegment[orientation][p][i];
             }
 
             //normal => white digits

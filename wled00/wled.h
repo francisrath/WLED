@@ -682,6 +682,9 @@ WLED_GLOBAL uint32_t ledMaps _INIT(0); // bitfield representation of available l
 WLED_GLOBAL uint16_t ledMaps _INIT(0); // bitfield representation of available ledmaps
 #endif
 
+// Added with HEX CLOCK mod
+WLED_GLOBAL int8_t currentLedmap _INIT(-1);
+
 // Usermod manager
 WLED_GLOBAL UsermodManager usermods _INIT(UsermodManager());
 

@@ -1,5 +1,5 @@
 //segment for each orientation (6), of each digitSegment (4), of specific led indexes (12 or 13)
-const int mysegment [6][4][13] = 
+const int digitSegment [6][4][13] = 
 {
     {
         {

@@ -238,6 +238,7 @@ using PSRAMDynamicJsonDocument = BasicJsonDocument<PSRAM_Allocator>;
 #endif
 
 // Global Variable definitions
+WLED_GLOBAL int8_t currentLedmap _INIT(-1);
 WLED_GLOBAL char versionString[] _INIT(TOSTRING(WLED_VERSION));
 #define WLED_CODENAME "Hoshi"
 

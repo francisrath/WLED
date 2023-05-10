@@ -173,6 +173,8 @@
   #include "../usermods/boblight/boblight.h"
 #endif
 
+#include "../usermods/usermod_v2_hex_clock/usermod_v2_hex_clock.h"
+
 #if defined(WLED_USE_SD_MMC) || defined(WLED_USE_SD_SPI)
 // This include of SD.h and SD_MMC.h must happen here, else they won't be
 // resolved correctly (when included in mod's header only)
@@ -197,6 +199,7 @@ void registerUsermods()
    * || || ||
    * \/ \/ \/
    */
+  usermods.add(new HexClock());
   //usermods.add(new MyExampleUsermod());
   #ifdef USERMOD_BATTERY
   usermods.add(new UsermodBattery());

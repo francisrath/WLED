@@ -181,7 +181,9 @@
   #include "../usermods/Internal_Temperature_v2/usermod_internal_temperature.h"
 #endif
 
-#include "../usermods/usermod_v2_hex_clock/usermod_v2_hex_clock.h"
+#ifdef USERMOD_HEXA_CLOCK
+  #include "../usermods/usermod_v2_hexa_clock/usermod_v2_hexa_clock.h"
+#endif
 
 #if defined(WLED_USE_SD_MMC) || defined(WLED_USE_SD_SPI)
 // This include of SD.h and SD_MMC.h must happen here, else they won't be
@@ -213,7 +215,9 @@ void registerUsermods()
    * || || ||
    * \/ \/ \/
    */
-  usermods.add(new HexClock());
+  #ifdef USERMOD_HEXA_CLOCK
+  usermods.add(new HexaClock());
+  #endif
   //usermods.add(new MyExampleUsermod());
   #ifdef USERMOD_BATTERY
   usermods.add(new UsermodBattery());

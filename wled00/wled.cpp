@@ -182,6 +182,7 @@ void WLED::loop()
   }
   if (loadLedmap >= 0) {
     if (!strip.deserializeMap(loadLedmap) && strip.isMatrix && loadLedmap == 0) strip.setUpMatrix();
+    currentLedmap = loadLedmap;
     loadLedmap = -1;
   }
   yield();

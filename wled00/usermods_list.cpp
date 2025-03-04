@@ -215,6 +215,9 @@ void registerUsermods()
    * || || ||
    * \/ \/ \/
    */
+  #ifdef USERMOD_HEXA_CLOCK
+  usermods.add(new HexaClock());
+  #endif
   //usermods.add(new MyExampleUsermod());
 
   #ifdef USERMOD_HEXA_CLOCK

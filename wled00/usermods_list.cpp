@@ -219,6 +219,11 @@ void registerUsermods()
   usermods.add(new HexaClock());
   #endif
   //usermods.add(new MyExampleUsermod());
+
+  #ifdef USERMOD_HEXA_CLOCK
+  usermods.add(new HexaClock());
+  #endif
+
   #ifdef USERMOD_BATTERY
   usermods.add(new UsermodBattery());
   #endif
